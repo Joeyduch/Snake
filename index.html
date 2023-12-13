@@ -10,13 +10,37 @@
         <script defer src="scripts/singletons.js"></script>
         <script defer src="scripts/classes.js"></script>
         <script defer src="scripts/game.js"></script>
+        <script defer src="scripts/settings.js"></script>
     </head>
     <body>
+        <nav class="settings">
+            <button id="settings-button"><img src="assets/apple.png" alt="settings button"/></button>
+            <div id="settings-container" class="hidden">
+                <div>
+                    <label for="settings__theme">Set Theme:</label>
+                    <select id="settings__theme">
+                        <option value="theme_01">Theme 01</option>
+                        <option value="theme_02">Theme 02</option>
+                        <option value="theme_03">Theme 03</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="settings__speed">Set Speed:</label>
+                    <select id="settings__speed">
+                        <option value="speed_slow">Slow</option>
+                        <option value="speed_medium" selected="selected">Medium</option>
+                        <option value="speed_fast">Fast</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+
         <main>
-            <p>Snake Game <em class="version">v1.0</em></p>
+            <p>Snake Game <em class="version">v1.1</em></p>
             <canvas id="game">Canvas element not supported by browser</canvas>
             <p>Score: <em id="score">0</em></p>
         </main>
+        
         <footer>
             <div class="bottom-text">
                 <p class="controls">Controls: [w] [a] [s] [d]</p>

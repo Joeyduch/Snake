@@ -2,9 +2,33 @@
     --background-color: rgb(25, 25, 25);
 }
 
-body {
+
+/*
+    THEMES
+*/
+.theme_01__background-color {
+    background-color: rgb(25, 25, 25);
+}
+
+.theme_02__background-color {
+    background-color: rgb(36, 56, 31);
+}
+
+.theme_03__background-color {
+    background-color: rgb(48, 13, 13);
+}
+
+
+
+/*
+    GENERAL
+*/
+* {
     margin: 0;
     padding: 0;
+}
+
+body {
     box-sizing: border-box;
 
     font-family: sans-serif;
@@ -13,6 +37,65 @@ body {
     color: white;
 }
 
+.hidden {
+    display:none;
+}
+
+
+
+
+
+/*
+    NAV / SETTINGS
+*/
+nav {
+    z-index: 100;
+}
+
+.settings {
+    position: absolute;
+}
+
+#settings-button {
+    margin: 16px 0 0 16px;
+    padding: 8px;
+}
+
+#settings-button > img{
+    max-width: 32px;
+}
+
+#settings-container > div {
+    display: inline-block;
+    margin: 8px;
+}
+
+select {
+    padding: 4px;
+}
+
+button, select {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+
+    border-radius: 8px;
+}
+
+button:hover, select:hover {
+    border: 1px solid yellow;
+}
+
+option {
+    background-color: black;
+    color:white;
+}
+
+
+
+/*
+    MAIN
+*/
 main {
     position: absolute;
     top: 50%;
@@ -35,6 +118,9 @@ main {
 }
 
 main > p {
+    width: fit-content;
+    display: block;
+    margin: 0 auto;
     font-size: 1.2em;
     text-align: center;
 }
@@ -43,6 +129,11 @@ main > p {
     color:yellow;
 }
 
+
+
+/*
+    FOOTER
+*/
 footer {
     position: absolute;
     bottom: 0;
