@@ -5,6 +5,7 @@ const element_settings_container = document.getElementById("settings-container")
 const element_settings_toggle = document.getElementById("settings-button");
 const element_settings_theme = document.getElementById("settings__theme");
 const element_settings_speed = document.getElementById("settings__speed");
+const element_settings_size = document.getElementById("settings__size");
 const element_settings_mobile = document.getElementById("settings__mobile");
 
 const element_mobile_controls = document.getElementById("mobile-controls");
@@ -63,6 +64,11 @@ element_settings_theme.addEventListener("change", event => {
 
 element_settings_speed.addEventListener("change", event => {
     game.speed = settings_speed[element_settings_speed.value];
+});
+
+element_settings_size.addEventListener("change", event => {
+    game.tileSize = parseInt(element_settings_size.value);
+    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID);
 });
 
 // Mobile controls

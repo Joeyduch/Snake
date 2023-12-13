@@ -48,21 +48,27 @@ body {
 /*
     NAV / SETTINGS
 */
-nav {
-    z-index: 100;
-}
 
 .settings {
     position: absolute;
+    z-index: 100;
 }
 
 #settings-button {
+    opacity: 0.5;
+    background-image: url(./assets/apple.png);
+    background-size: 60%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    width: 64px;
+    aspect-ratio: 1/1;
     margin: 16px 0 0 16px;
     padding: 8px;
 }
 
-#settings-button > img{
-    max-width: 32px;
+#settings-button:hover {
+    opacity: 1;
+    border: 1px solid white;
 }
 
 #settings-container {
@@ -117,9 +123,16 @@ main {
     display: block;
     margin: 8px auto;
     max-width: 98%;
+    max-height: 75vh;
 
     border: 1px solid white;
     border-radius: 8px;
+}
+
+@media (min-aspect-ratio: 4/1) {
+    .title {
+        display: none;
+    }
 }
 
 main > p {
@@ -163,6 +176,12 @@ footer {
 .mobile-controls__btn:hover {
     border-color: rgb(255,255,255, 0.5);
     color: rgb(255,255,255, 0.5);
+}
+
+@media (min-aspect-ratio: 3/2) {
+    .mobile-controls__btn {
+        width: 15%;
+    }
 }
 
 .bottom-text {

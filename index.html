@@ -14,7 +14,7 @@
     </head>
     <body>
         <nav class="settings">
-            <button id="settings-button"><img src="assets/apple.png" alt="settings button"/></button>
+            <button id="settings-button"></button>
             <div id="settings-container" class="hidden">
                 <div>
                     <label for="settings__theme">Theme:</label>
@@ -33,6 +33,15 @@
                     </select>
                 </div>
                 <div>
+                    <label for="settings__size">Size:</label>
+                    <select id="settings__size">
+                        <option value="8">8</option>
+                        <option value="16">16</option>
+                        <option value="32" selected="selected">32</option>
+                        <option value="48">48</option>
+                    </select>
+                </div>
+                <div>
                     <label for="settings__mobile">Buttons:</label>
                     <select id="settings__mobile">
                         <option value="true" selected="selected">Shown</option>
@@ -43,7 +52,7 @@
         </nav>
 
         <main>
-            <p>Snake Game <em class="version">v1.2.1</em></p>
+            <p class="title">Snake Game <em class="version">v1.3</em></p>
             <canvas id="game">Canvas element not supported by browser</canvas>
             <p>Score: <em id="score">0</em></p>
         </main>
