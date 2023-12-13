@@ -1,0 +1,66 @@
+:root {
+    --background-color: rgb(25, 25, 25);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+    
+    background-color: var(--background-color);
+    color: white;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+}
+
+.version {
+    font-size: 0.8em;
+}
+
+#game {
+    display: block;
+    margin: 0 auto;
+    max-width: 98%;
+
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+main > p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#score {
+    color:yellow;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bottom-text {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px;
+    font-size: 1em;
+}
+
+.bottom-text > p {
+    margin: 8px 0;
+}
+
+.author {
+    font-size: 0.8em;
+}
