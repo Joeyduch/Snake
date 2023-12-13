@@ -38,7 +38,7 @@ body {
 }
 
 .hidden {
-    display:none;
+    display:none!important;
 }
 
 
@@ -65,9 +65,14 @@ nav {
     max-width: 32px;
 }
 
+#settings-container {
+    display:inline-block;
+}
+
 #settings-container > div {
     display: inline-block;
     margin: 8px;
+    background-color: var(--background-color);
 }
 
 select {
@@ -110,7 +115,7 @@ main {
 
 #game {
     display: block;
-    margin: 0 auto;
+    margin: 8px auto;
     max-width: 98%;
 
     border: 1px solid white;
@@ -139,6 +144,25 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.mobile-controls__container {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mobile-controls__container > button {
+    border: 1px solid rgb(255,255,255, 0.25);
+    color: rgb(255,255,255, 0.25);
+    width: 128px;
+    height: 64px;
+
+    font-size: 2em;
+}
+
+.mobile-controls__container > button:hover {
+    border-color: rgb(255,255,255, 0.5);
+    color: rgb(255,255,255, 0.5);
 }
 
 .bottom-text {

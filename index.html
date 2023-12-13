@@ -17,7 +17,7 @@
             <button id="settings-button"><img src="assets/apple.png" alt="settings button"/></button>
             <div id="settings-container" class="hidden">
                 <div>
-                    <label for="settings__theme">Set Theme:</label>
+                    <label for="settings__theme">Theme:</label>
                     <select id="settings__theme">
                         <option value="theme_01">Theme 01</option>
                         <option value="theme_02">Theme 02</option>
@@ -25,23 +25,38 @@
                     </select>
                 </div>
                 <div>
-                    <label for="settings__speed">Set Speed:</label>
+                    <label for="settings__speed">Speed:</label>
                     <select id="settings__speed">
                         <option value="speed_slow">Slow</option>
                         <option value="speed_medium" selected="selected">Medium</option>
                         <option value="speed_fast">Fast</option>
                     </select>
                 </div>
+                <div>
+                    <label for="settings__mobile">Buttons:</label>
+                    <select id="settings__mobile">
+                        <option value="true" selected="selected">Shown</option>
+                        <option value="false">Hidden</option>
+                    </select>
+                </div>
             </div>
         </nav>
 
         <main>
-            <p>Snake Game <em class="version">v1.1</em></p>
+            <p>Snake Game <em class="version">v1.2</em></p>
             <canvas id="game">Canvas element not supported by browser</canvas>
             <p>Score: <em id="score">0</em></p>
         </main>
         
         <footer>
+            <div id="mobile-controls">
+                <div class="mobile-controls__container">
+                    <button id="mobile-controls__left">←</button>
+                    <button id="mobile-controls__up">↑</button>
+                    <button id="mobile-controls__down">↓</button>
+                    <button id="mobile-controls__right">→</button>
+                </div>
+            </div>
             <div class="bottom-text">
                 <p class="controls">Controls: [w] [a] [s] [d]</p>
                 <p class="author">Joey Ducharme - 2023</p>

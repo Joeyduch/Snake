@@ -5,6 +5,13 @@ const element_settings_container = document.getElementById("settings-container")
 const element_settings_toggle = document.getElementById("settings-button");
 const element_settings_theme = document.getElementById("settings__theme");
 const element_settings_speed = document.getElementById("settings__speed");
+const element_settings_mobile = document.getElementById("settings__mobile");
+
+const element_mobile_controls = document.getElementById("mobile-controls");
+const element_mobile_left = document.getElementById("mobile-controls__left");
+const element_mobile_up = document.getElementById("mobile-controls__up");
+const element_mobile_down = document.getElementById("mobile-controls__down");
+const element_mobile_right = document.getElementById("mobile-controls__right");
 
 
 // settings value-mapping
@@ -56,4 +63,26 @@ element_settings_theme.addEventListener("change", event => {
 
 element_settings_speed.addEventListener("change", event => {
     game.speed = settings_speed[element_settings_speed.value];
+});
+
+// Mobile controls
+element_settings_mobile.addEventListener("change", event => {
+    element_mobile_controls.className = element_settings_mobile.value === "true" ? "" : "hidden";
+});
+
+element_mobile_left.addEventListener("click", event => {
+    keyboard.press("a");
+    keyboard.release("a");
+});
+element_mobile_up.addEventListener("click", event => {
+    keyboard.press("w");
+    keyboard.release("w");
+});
+element_mobile_down.addEventListener("click", event => {
+    keyboard.press("s");
+    keyboard.release("s");
+});
+element_mobile_right.addEventListener("click", event => {
+    keyboard.press("d");
+    keyboard.release("d");
 });
