@@ -3,6 +3,7 @@ console.log("Loaded game");
 // Some useful constant for some element rendering
 CANVAS_ELEMENT_ID = "game";
 SCORE_ELEMENT_ID = "score";
+SCORE_PB_ELEMENT_ID = "score_pb";
 
 
 
@@ -24,11 +25,12 @@ const game = {
     canvas: null,
     context: null,
     scoreElement: null,
+    scorePbElement: null,
     player: null,
     apple: null,
 
-    init: function(canvasElementId, scoreElementId) {
-        if(!canvasElementId || !scoreElementId) {
+    init: function(canvasElementId, scoreElementId, scorePbElementId) {
+        if(!canvasElementId || !scoreElementId || !scorePbElementId) {
             console.error("Provide id for canvas and score elements");
             return;
         }
@@ -36,6 +38,7 @@ const game = {
         this.canvas = document.getElementById(canvasElementId);
         this.context = this.canvas.getContext("2d");
         this.scoreElement = document.getElementById(scoreElementId);
+        this.scorePbElement = document.getElementById(scorePbElementId);
         this.canvas.width = this.width;
         this.canvas.height = this.height;
         this.rows = Math.ceil(this.width / this.tileSize);
@@ -47,6 +50,9 @@ const game = {
         this.addScore(-this.score);
         this.moveApple();
 
+        if(localStorage.getItem("score_pb")) {
+            this.scorePbElement.innerHTML = localStorage.getItem("score_pb");
+        }
         if(setTheme) {
             setTheme(element_settings_theme.value);
         }
@@ -61,7 +67,7 @@ const game = {
             this.player.grow();
             this.addScore();
         }
-        if(!this.player.isAlive && keyboard.isPressed("r")) this.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID);
+        if(!this.player.isAlive && keyboard.isPressed("r")) this.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID, SCORE_PB_ELEMENT_ID);
 
         // engine
         this.draw();
@@ -123,7 +129,7 @@ const game = {
 
 // Main functions
 function _start() {
-    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID);
+    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID, SCORE_PB_ELEMENT_ID);
 
     window.requestAnimationFrame(() => {_update()});
 }

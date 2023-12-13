@@ -121,6 +121,9 @@ class Snake {
 
     die() {
         this.isAlive = false;
+        if(!localStorage.getItem("score_pb") || game.score > localStorage.getItem("score_pb")) {
+            localStorage.setItem("score_pb", game.score);
+        }
     }
 }
 

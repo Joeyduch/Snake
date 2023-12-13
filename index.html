@@ -19,17 +19,21 @@
                 <div>
                     <label for="settings__theme">Theme:</label>
                     <select id="settings__theme">
-                        <option value="theme_01">Theme 01</option>
-                        <option value="theme_02">Theme 02</option>
-                        <option value="theme_03">Theme 03</option>
+                        <option value="theme_01">Default</option>
+                        <option value="theme_02">Forest</option>
+                        <option value="theme_03">Fire</option>
+                        <option value="theme_04">Sky</option>
+                        <option value="theme_05">Noire</option>
                     </select>
                 </div>
                 <div>
                     <label for="settings__speed">Speed:</label>
                     <select id="settings__speed">
-                        <option value="speed_slow">Slow</option>
-                        <option value="speed_medium" selected="selected">Medium</option>
-                        <option value="speed_fast">Fast</option>
+                        <option value="slow">Slow</option>
+                        <option value="medium" selected="selected">Medium</option>
+                        <option value="fast">Fast</option>
+                        <option value="faster">Faster</option>
+                        <option value="insane">Insane</option>
                     </select>
                 </div>
                 <div>
@@ -48,13 +52,17 @@
                         <option value="false">Hidden</option>
                     </select>
                 </div>
+                <div>
+                    <button id="settings__init-button">Restart</button>
+                </div>
             </div>
         </nav>
 
         <main>
-            <p class="title">Snake Game <em class="version">v1.3</em></p>
+            <p class="title">Snake Game <em class="version">v1.4</em></p>
             <canvas id="game">Canvas element not supported by browser</canvas>
-            <p>Score: <em id="score">0</em></p>
+            <p class="score-label">Score: <em id="score" class="score-number">0</em></p>
+            <p class="score-label score-pb-label">Personal Best: <em id="score_pb" class="score-number">0</em></p>
         </main>
         
         <footer>
@@ -67,7 +75,7 @@
                 </div>
             </div>
             <div class="bottom-text">
-                <p class="controls">Controls: [w] [a] [s] [d]</p>
+                <p class="controls">Controls: W - A - S - D</p>
                 <p class="author">Joey Ducharme - 2023</p>
             </div>
         </footer>

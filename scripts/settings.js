@@ -8,6 +8,8 @@ const element_settings_speed = document.getElementById("settings__speed");
 const element_settings_size = document.getElementById("settings__size");
 const element_settings_mobile = document.getElementById("settings__mobile");
 
+const element_settings_initButton = document.getElementById("settings__init-button");
+
 const element_mobile_controls = document.getElementById("mobile-controls");
 const element_mobile_left = document.getElementById("mobile-controls__left");
 const element_mobile_up = document.getElementById("mobile-controls__up");
@@ -35,12 +37,26 @@ const settings_theme = {
         colorApple: "firebrick",
         backgroundClass: "theme_03__background-color",
     },
+    "theme_04": {
+        colorPlayer: "rgb(0, 153, 255)",
+        colorTrail: "rgb(51, 173, 255)",
+        colorApple: "rgb(255, 77, 77)",
+        backgroundClass: "theme_04__background-color",
+    },
+    "theme_05": {
+        colorPlayer: "rgb(75, 75, 75)",
+        colorTrail: "rgb(100, 100, 100)",
+        colorApple: "rgb(255,255,255)",
+        backgroundClass: "theme_05__background-color",
+    },
 }
 
 const settings_speed = {
-    "speed_slow": 16,
-    "speed_medium": 8,
-    "speed_fast": 4,
+    "slow": 16,
+    "medium": 8,
+    "fast": 4,
+    "faster": 2,
+    "insane": 1,
 }
 
 
@@ -68,8 +84,14 @@ element_settings_speed.addEventListener("change", event => {
 
 element_settings_size.addEventListener("change", event => {
     game.tileSize = parseInt(element_settings_size.value);
-    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID);
+    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID, SCORE_PB_ELEMENT_ID);
 });
+
+
+element_settings_initButton.addEventListener("click", event => {
+    game.init(CANVAS_ELEMENT_ID, SCORE_ELEMENT_ID, SCORE_PB_ELEMENT_ID);
+});
+
 
 // Mobile controls
 element_settings_mobile.addEventListener("change", event => {

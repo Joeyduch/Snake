@@ -1,5 +1,7 @@
 :root {
     --background-color: rgb(25, 25, 25);
+    --shadow: rgba(0,0,0,0.5) 0px 0px 2px 2px;
+    --text-shadow: black 0px 0px 8px;
 }
 
 
@@ -16,6 +18,14 @@
 
 .theme_03__background-color {
     background-color: rgb(48, 13, 13);
+}
+
+.theme_04__background-color {
+    background-color: rgb(128, 223, 255)
+}
+
+.theme_05__background-color {
+    background-color: rgb(180,180,180);
 }
 
 
@@ -51,34 +61,43 @@ body {
 
 .settings {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
+    margin: 16px;
 }
 
 #settings-button {
     opacity: 0.5;
+    background-color: rgba(0,0,0,0.5);
     background-image: url(./assets/apple.png);
+    box-shadow: var(--shadow);
+
     background-size: 60%;
     background-position: 50%;
     background-repeat: no-repeat;
     width: 64px;
     aspect-ratio: 1/1;
-    margin: 16px 0 0 16px;
     padding: 8px;
 }
 
 #settings-button:hover {
     opacity: 1;
-    border: 1px solid white;
+    border-color: white;
 }
 
 #settings-container {
+    position: inherit;
     display:inline-block;
 }
 
 #settings-container > div {
     display: inline-block;
     margin: 8px;
-    background-color: var(--background-color);
+    padding: 4px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 8px;
 }
 
 select {
@@ -88,18 +107,28 @@ select {
 button, select {
     background-color: transparent;
     color: white;
-    border: 1px solid white;
+    border: 2px solid white;
 
     border-radius: 8px;
 }
 
 button:hover, select:hover {
-    border: 1px solid yellow;
+    border-color: yellow;
 }
 
 option {
     background-color: black;
     color:white;
+}
+
+#settings__init-button {
+    padding: 8px;
+    border-color: firebrick;
+    box-shadow: var(--shadow);
+}
+
+#settings__init-button:hover {
+    border-color: red;
 }
 
 
@@ -125,8 +154,9 @@ main {
     max-width: 98%;
     max-height: 75vh;
 
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 8px;
+    box-shadow: var(--shadow);
 }
 
 @media (min-aspect-ratio: 4/1) {
@@ -136,15 +166,30 @@ main {
 }
 
 main > p {
-    width: fit-content;
     display: block;
+    width: fit-content;
     margin: 0 auto;
+
     font-size: 1.2em;
     text-align: center;
+
+    text-shadow: var(--text-shadow);
+}
+
+.score-pb-label {
+    font-size: 1em;
+}
+
+.score-number {
+    font-weight: 900;
 }
 
 #score {
-    color:yellow;
+    color: yellow;
+}
+
+#score_pb {
+    color: white;
 }
 
 
@@ -165,17 +210,23 @@ footer {
 }
 
 .mobile-controls__btn {
-    border: 1px solid rgb(255,255,255, 0.25);
-    color: rgb(255,255,255, 0.25);
     width: 22%;
     aspect-ratio: 1/1;
 
-    font-size: 2em;
+    font-size: 3em;
+
+    opacity: 0.2;
+    background-image: radial-gradient(rgba(0,0,0,0.8), transparent);
+    border: 4px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+    box-shadow: var(--shadow);
+    
 }
 
 .mobile-controls__btn:hover {
-    border-color: rgb(255,255,255, 0.5);
-    color: rgb(255,255,255, 0.5);
+    opacity: 0.5;
+    border-color: rgb(255,255,255);
+    color: rgb(255,255,255);
 }
 
 @media (min-aspect-ratio: 3/2) {
@@ -184,11 +235,19 @@ footer {
     }
 }
 
+@media (max-width: 24em) {
+    .mobile-controls__btn {
+        font-size: 1.5em;
+    }
+}
+
 .bottom-text {
     display: flex;
     justify-content: space-between;
     margin: 0 8px;
     font-size: 1em;
+
+    text-shadow: var(--text-shadow);
 }
 
 .bottom-text > p {
