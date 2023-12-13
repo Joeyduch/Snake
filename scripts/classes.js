@@ -6,7 +6,8 @@ class Snake {
         this.head = [Math.floor(game.rows/2), Math.floor(game.cols/2)]; // current [x,y]
         this.body = [] // [[x,y], [x,y], [x,y]];
         this.direction = [0,0];
-        this.defaultColor = "white";
+        this.headColor = "white";
+        this.bodyColor = "white";
         this.isAlive = true;
     }
 
@@ -22,7 +23,7 @@ class Snake {
         }
     }
 
-    draw(canvasContext, tileSize, headFillStyle=this.defaultColor, bodyFillStyle=this.defaultColor) {
+    draw(canvasContext, tileSize, headFillStyle=this.headColor, bodyFillStyle=this.bodyColor) {
         canvasContext.fillStyle = headFillStyle;
         canvasContext.fillRect(this.head[0]*tileSize, this.head[1]*tileSize, tileSize, tileSize);
 
@@ -132,9 +133,10 @@ class Apple {
     constructor() {
         this.x = 0;
         this.y = 0;
+        this.color = "red";
     }
 
-    draw(canvasContext, tileSize, fillStyle="red") {
+    draw(canvasContext, tileSize, fillStyle=this.color) {
         canvasContext.fillStyle = fillStyle;
         canvasContext.fillRect(this.x*tileSize, this.y*tileSize, tileSize, tileSize);
     }

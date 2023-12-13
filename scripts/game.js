@@ -46,6 +46,10 @@ const game = {
 
         this.addScore(-this.score);
         this.moveApple();
+
+        if(setTheme) {
+            setTheme(element_settings_theme.value);
+        }
     },
 
     update: function() {
@@ -67,8 +71,7 @@ const game = {
     draw: function() {
         const ctx = this.context;
         // Background
-        ctx.fillStyle = this.colorBG;
-        ctx.fillRect(0,0,this.width, this.height);
+        ctx.clearRect(0,0,this.width, this.height)
         // Objects
         this.player.draw(ctx, this.tileSize);
         this.apple.draw(ctx, this.tileSize);
