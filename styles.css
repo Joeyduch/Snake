@@ -147,20 +147,20 @@ footer {
 }
 
 .mobile-controls__container {
-    width: fit-content;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
 }
 
-.mobile-controls__container > button {
+.mobile-controls__btn {
     border: 1px solid rgb(255,255,255, 0.25);
     color: rgb(255,255,255, 0.25);
-    width: 128px;
-    height: 64px;
+    width: 22%;
+    aspect-ratio: 1/1;
 
     font-size: 2em;
 }
 
-.mobile-controls__container > button:hover {
+.mobile-controls__btn:hover {
     border-color: rgb(255,255,255, 0.5);
     color: rgb(255,255,255, 0.5);
 }
